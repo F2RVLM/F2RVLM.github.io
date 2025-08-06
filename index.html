@@ -102,33 +102,31 @@
 </section>
 
 
-<section class="section" id="methods">
+  <section class="section" id="methods">
+      <hr />
+      <h2 class="title is-3">Method</h2>
 
-<hr />
-<h2 class="title is-3">Method</h2>
+      <hr />
+          <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                  height="160" src="assets/Retrieval.jpg"></td>
+      <center>
+          <h5 class="title is-6">Exemplary results of animated sticker generation using our proposed approach, RDTF.
+Our method performs well on different generation tasks: (top) Text&image to GIF, (middle) Prediction, (down) Interpolation.
+Gray boxes indicate text or visual guidance.</h5>
+      </center>
 
-<hr />
-    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-            height="160" src="assets/Retrieval.jpg"></td>
-<center>
-    <h5 class="title is-6">Figure 1: Comparison between traditional Dialogue Retrieval and our Fine-grained Fragment Retrieval (FFR) task. </h5>
-</center>
-
-<hr />
-<td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-    height="160" src="assets/MLDR.jpg"></td>
-<center>
-<h5 class="title is-6">Figure 2: Overview of the MLDR construction pipeline, which integrates multimodal short dialogue processing, Qwen3-driven long-form dialogue generation, multi-granularity annotation, and retrieval-oriented task design.</h5>
-</center>
+      <hr />
+          <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                  height="160" src="assets/MLDR.jpg"></td>
+      <center>
+          <h5 class="title is-6">An overview of resource-efficient multi-task training framework.
+We adopt a model size that can be tolerated under constrained resources and propose a spatio temporal interaction layer to model the discreteness between animated stickers.
+Furthermore, the condition mask and loss mask are designed to enable the model can effectively utilize data through multi-task and short-frame data learning, and the curriculum learning is applied to improve training of resource-constrained model.</h5>
+      </center>
 
 
-<hr />
-<td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-    height="160" src="assets/Framework.jpg"></td>
-<center>
-<h5 class="title is-6">Figure 3: Overview of the F$^2$RVLM framework for multimodal long-form dialogue fragment retrieval. It consists of supervised fine-tuning for fragment-level knowledge injection, personalized curriculum sampling based on retrieval difficulty, and GRPO-based reinforcement learning to jointly enhance retrieval accuracy and fragment semantic coherence.</h5>
-</center>
-</section>
+  </section>
+
   <!-- Task Definition Figure -->
   <!-- <div style="text-align: center; margin-bottom: 2rem;">
     <a href="assets/Retrieval.jpg" target="_blank">
