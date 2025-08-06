@@ -5,7 +5,7 @@
     <meta name="description" content="RMTF">
     <meta name="keywords" content="Dialogue Retrieval, Vision-Language Model">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RDTF</title>
+    <title>F²RVLM</title>
 
     <!-- 数学公式支持 -->
     <script type="text/x-mathjax-config">
@@ -39,7 +39,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h2 class="title is-2 publication-title">
-            <img class="center" width="100" height="35" src="assets/F2RVLM.png">
+            <img class="center" width="50" height="35" src="assets/F2RVLM.png">
             F²RVLM: Boosting Fine-grained Fragment Retrieval for Multi-Modal Long-form Dialogue with Vision Language Model
           </h2>
           <div class="is-size-5 publication-authors">
@@ -89,12 +89,12 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>Traditional dialogue retrieval aims to select the most appropriate utterance or image from recent dialogue history. However, they often fail to meet users’ actual needs for revisiting semantically coherent content scattered across long-form conversations.</p>
-          <p>To fill this gap, we define the Fine-grained Fragment Retrieval (FFR) task, requiring models to locate query-relevant fragments, comprising both utterances and images, from multimodal long-form dialogues.</p>
-          <p>As a foundation for FFR, we construct MLDR, the longest-turn multimodal dialogue retrieval dataset to date, averaging 25.45 turns per dialogue, with each naturally spanning three distinct topics. To evaluate generalization in real-world scenarios, we curate and annotate a WeChat-based test set comprising real-world multimodal dialogues with an average of 75.38 turns.</p>
-          <p>Building on these resources, we explore existing generation-based Vision-Language Models (VLMs) on FFR and observe that they often retrieve incoherent utterance-image fragments. While optimized for generating responses from visual-textual inputs, these models lack explicit supervision to ensure semantic coherence within retrieved fragments.</p>
-          <p>To address this, we propose F$^2$RVLM, a generative retrieval model trained in a two-stage paradigm: (1) supervised fine-tuning to inject fragment-level retrieval knowledge, and (2) GRPO-based reinforcement learning with multi-objective rewards to encourage outputs with semantic precision, relevance, and contextual coherence.</p>
-          <p>In addition, to account for difficulty variations arising from differences in intra-fragment element distribution, ranging from locally dense to sparsely scattered, we introduce a difficulty-aware curriculum sampling that ranks training instances by predicted difficulty and gradually incorporates harder examples. This strategy enhances the model’s reasoning ability in long, multi-turn dialogue contexts.</p>
-          <p>Experiments on both in-domain and real-domain sets demonstrate that F$^2$RVLM substantially outperforms popular VLMs, achieving superior retrieval performance.</p>
+          <p>To fill this gap, we define the Fine-grained Fragment Retrieval (FFR) task, requiring models to locate query-relevant fragments, comprising both utterances and images, from multimodal long-form dialogues.
+          As a foundation for FFR, we construct MLDR, the longest-turn multimodal dialogue retrieval dataset to date, averaging 25.45 turns per dialogue, with each naturally spanning three distinct topics. To evaluate generalization in real-world scenarios, we curate and annotate a WeChat-based test set comprising real-world multimodal dialogues with an average of 75.38 turns.
+          Building on these resources, we explore existing generation-based Vision-Language Models (VLMs) on FFR and observe that they often retrieve incoherent utterance-image fragments. While optimized for generating responses from visual-textual inputs, these models lack explicit supervision to ensure semantic coherence within retrieved fragments.
+          To address this, we propose F$^2$RVLM, a generative retrieval model trained in a two-stage paradigm: (1) supervised fine-tuning to inject fragment-level retrieval knowledge, and (2) GRPO-based reinforcement learning with multi-objective rewards to encourage outputs with semantic precision, relevance, and contextual coherence.
+          In addition, to account for difficulty variations arising from differences in intra-fragment element distribution, ranging from locally dense to sparsely scattered, we introduce a difficulty-aware curriculum sampling that ranks training instances by predicted difficulty and gradually incorporates harder examples. This strategy enhances the model’s reasoning ability in long, multi-turn dialogue contexts.
+          Experiments on both in-domain and real-domain sets demonstrate that F$^2$RVLM substantially outperforms popular VLMs, achieving superior retrieval performance.</p>
         </div>
       </div>
     </div>
@@ -102,30 +102,33 @@
 </section>
 
 
-    <section class="section" id="methods">
-        <hr />
-        <h2 class="title is-3">Method</h2>
+<section class="section" id="methods">
+<hr />
+<h2 class="title is-3">Method</h2>
 
-        <hr />
-            <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-                    height="160" src="assets/fig1.jpg"></td>
-        <center>
-            <h5 class="title is-6">Exemplary results of animated sticker generation using our proposed approach, RDTF.
-Our method performs well on different generation tasks: (top) Text&image to GIF, (middle) Prediction, (down) Interpolation.
-Gray boxes indicate text or visual guidance.</h5>
-        </center>
+<hr />
+<div style="text-align: center;">
+  <img src="assets/Retrieval.jpg" style="max-height: 700px; width: auto;" alt="FFR Task Illustration">
+  <p class="subtitle is-6">Comparison between the traditional Dialogue Retrieval and our Fine-grained Fragment Retrieval task.</p>
+</div>
+</center>
 
-        <hr />
-            <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-                    height="160" src="assets/overview.jpg"></td>
-        <center>
-            <h5 class="title is-6">An overview of resource-efficient multi-task training framework.
-We adopt a model size that can be tolerated under constrained resources and propose a spatio temporal interaction layer to model the discreteness between animated stickers.
-Furthermore, the condition mask and loss mask are designed to enable the model can effectively utilize data through multi-task and short-frame data learning, and the curriculum learning is applied to improve training of resource-constrained model.</h5>
-        </center>
+<hr />
+<td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+height="160" src="assets/MLDR.jpg"></td>
+<center>
+<h5 class="title is-6">Overview of the MLDR construction pipeline, which integrates multimodal short dialogue processing, Qwen3-driven long-form dialogue generation, multi-granularity annotation, and retrieval-oriented task design.</h5>
+</center>
+
+<hr />
+<td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+height="160" src="assets/Framework.jpg"></td>
+<center>
+<h5 class="title is-6">Overview of the F$^2$RVLM framework for multimodal long-form dialogue fragment retrieval. It consists of supervised fine-tuning for fragment-level knowledge injection, personalized curriculum sampling based on retrieval difficulty, and GRPO-based reinforcement learning to jointly enhance retrieval accuracy and fragment semantic coherence.</h5>
+</center>
 
 
-    </section>
+</section>
 
 
     <section class="section" id="results">
