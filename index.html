@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="F²RVLM">
+    <meta name="description"
+        content="F²RVLM">
     <meta name="keywords" content="Dialogue Retrieval, Vision-Language Model">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>F²RVLM</title>
 
-    <!-- 数学公式支持 -->
     <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
 
-    <!-- 字体和样式 -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
     <link rel="stylesheet" href="./static/css/bulma.min.css">
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -23,7 +26,6 @@
     <link rel="stylesheet" href="./static/css/index.css">
     <link rel="icon" href="./static/images/favicon.svg">
 
-    <!-- JS库 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
     <script src="./static/js/bulma-carousel.min.js"></script>
@@ -32,16 +34,17 @@
 </head>
 
 <body>
-<!-- 页面顶部介绍区域 -->
+
+
 <section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h2 class="title is-2 publication-title">
-            <img class="center" width="45" height="30" src="assets/F2RVLM.png">
-            F²RVLM: Boosting Fine-grained Fragment Retrieval for Multi-Modal Long-form Dialogue with Vision Language Model
-          </h2>
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h2 class="title is-2 publication-title">
+                <img class="center" width="45" height="30" src="assets/F2RVLM.png">
+                 F²RVLM: Boosting Fine-grained Fragment Retrieval for Multi-Modal Long-form Dialogue with Vision Language Model
+            </h2>
           <div class="is-size-5 publication-authors">
             <!-- 资源链接按钮 -->
             <div class="column has-text-centered">
@@ -68,20 +71,21 @@
                   <a href="https://github.com/F2RVLM/F2RVLM.github.io" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fab fa-github"></i></span>
                     <span>Code</span>
-                  </a>
+                    </a>
                 </span>
               </div>
+
+              </div>
+  
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
   
 
 
-<!-- 摘要部分 -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -100,168 +104,442 @@
     </div>
   </div>
 </section>
+      <!--/ Abstract. -->
 
 
-<section class="section" id="methods">
-    <hr />
-    <h2 class="title is-3">Method</h2>
+    <section class="section" id="methods">
+        <hr />
+        <h2 class="title is-3">Method</h2>
 
-    <hr />
-        <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-                height="160" src="assets/Retrieval.jpg"></td>
-    <center>
-        <h5 class="title is-6">Exemplary results of animated sticker generation using our proposed approach, RDTF.
+        <hr />
+            <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                    height="160" src="assets/fig1.jpg"></td>
+        <center>
+            <h5 class="title is-6">Exemplary results of animated sticker generation using our proposed approach, RDTF.
 Our method performs well on different generation tasks: (top) Text&image to GIF, (middle) Prediction, (down) Interpolation.
 Gray boxes indicate text or visual guidance.</h5>
-    </center>
+        </center>
 
-    <hr />
-        <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-                height="160" src="assets/MLDR.jpg"></td>
-    <center>
-        <h5 class="title is-6">An overview of resource-efficient multi-task training framework.
+        <hr />
+            <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                    height="160" src="assets/overview.jpg"></td>
+        <center>
+            <h5 class="title is-6">An overview of resource-efficient multi-task training framework.
 We adopt a model size that can be tolerated under constrained resources and propose a spatio temporal interaction layer to model the discreteness between animated stickers.
 Furthermore, the condition mask and loss mask are designed to enable the model can effectively utilize data through multi-task and short-frame data learning, and the curriculum learning is applied to improve training of resource-constrained model.</h5>
-    </center>
+        </center>
 
 
-</section>
-
-  <!-- Task Definition Figure -->
-  <!-- <div style="text-align: center; margin-bottom: 2rem;">
-    <a href="assets/Retrieval.jpg" target="_blank">
-      <img src="assets/Retrieval.jpg" style="max-height: 300px; width: auto; cursor: zoom-in;" alt="FFR Task Illustration">
-    </a>
-    <p class="subtitle is-6">Figure 1: Comparison between traditional Dialogue Retrieval and our Fine-grained Fragment Retrieval (FFR) task.</p>
-  </div> -->
-
-  <!-- MLDR Construction Pipeline -->
-  <!-- <div style="text-align: center; margin-bottom: 2rem;">
-    <a href="assets/MLDR.jpg" target="_blank">
-      <img src="assets/MLDR.jpg" style="max-height: 550px; width: auto; cursor: zoom-in;" alt="MLDR Construction Pipeline">
-    </a>
-    <p class="subtitle is-6">Figure 2: Overview of the MLDR construction pipeline, which integrates multimodal short dialogue processing, Qwen3-driven long-form dialogue generation, multi-granularity annotation, and retrieval-oriented task design.</p>
-  </div> -->
-
-  <!-- F2RVLM Framework -->
-  <!-- <div style="text-align: center;">
-    <a href="assets/Framework.jpg" target="_blank">
-      <img src="assets/Framework.jpg" style="max-height: 550px; width: auto; cursor: zoom-in;" alt="F2RVLM Framework">
-    </a>
-    <p class="subtitle is-6">Figure 3: Overview of the F$^2$RVLM framework for multimodal long-form dialogue fragment retrieval. It consists of supervised fine-tuning for fragment-level knowledge injection, personalized curriculum sampling based on retrieval difficulty, and GRPO-based reinforcement learning to jointly enhance retrieval accuracy and fragment semantic coherence.</p>
-  </div>
-</section> -->
-
-<!-- <section class="section" id="results">
-  <hr />
-  <h2 class="title is-3">Results</h2>
+    </section>
 
 
-  <hr />
-    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-            height="160" src="assets/results.png"></td>
-<center>
-    <h5 class="title is-6">Table 1: Comparison with popular VLMs on the MLDR validation set and WeChat test set. ``$\dagger$'' indicates zero-shot inference without MLDR fine-tuning. ``$\ast$'' indicates models limited by context length, evaluated via sliding-window inference. </h5>
-</center>
+    <section class="section" id="results">
+        <hr />
+            <h2 class="title is-3">Result Visualization</h2>
+            <table align="center">
+                <div class="center-text">
+                </div>
+                <br>
 
-<hr />
-<td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-    height="160" src="assets/MLDR_vis.jpg"></td>
-<center>
-<h5 class="title is-6">Figure 4: Qualitative comparison on the MLDR validation set. Given a user query, we visualize one representative case of retrieved fragments from various models. Pre-trained models often retrieve semantically relevant but incomplete or disjointed fragments. MLDR fine-tuned models improve alignment but may still miss contextual boundaries. Our F$^2$RVLM-7B achieves the most coherent and complete retrieval, accurately aligning both utterances and images with the intended semantics.</h5>
-</center>
+                <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Inputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/interpolation/b279f3612337f6116d365c36ee48925e_ref.png"></td>
+                </tr>
+                <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Outputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/interpolation/b279f3612337f6116d365c36ee48925e_pred.png"></td>
+                </tr>
+                 <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Inputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/interpolation/632bec5e08f177cd9f37a353697b6626_ref.png"></td>
+                </tr>
+                <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Outputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/interpolation/632bec5e08f177cd9f37a353697b6626_pred.png"></td>
+                </tr>
+            </table>
+            <center>
+            <h3 class="title is-4">Interpolation</h3>
+            </center>
+
+            </table>
+            <table align="center">
+                <div class="large-4 columns">
+                </div>
+                <br>
+
+                 <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Inputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/frame_prediction/191ebc1fe1716b012caf75913c0bb0e9_ref.png"></td>
+                </tr>
+                <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Outputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/frame_prediction/191ebc1fe1716b012caf75913c0bb0e9_pred.png"></td>
+                </tr>
+                 <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Inputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/frame_prediction/26109fcae83c64b6d77329e908f10bb4_ref.png"></td>
+                </tr>
+                <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Outputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/frame_prediction/26109fcae83c64b6d77329e908f10bb4_pred.png"></td>
+                </tr>
+            </table>
+            <center>
+            <h3 class="title is-4">Pre/Post Frame Prediction</h3>
+            </center>
+
+           </table>
+            <table align="center">
+                <div class="large-4 columns">
+                </div>
+                <br>
+
+                 <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Input Text:</td>
+                    <td width="1280" valign="middle" halign="left" align="left"
+                        style="font-size:13px; padding-bottom:20px">&nbsp;&nbsp;<i>A small cartoon character pointing at a heart </i></td>
+                 </tr>
+
+                <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Ref Img:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/it2v/9b4cdab649a2fcc7b2411f669414e540_ref.png"></td>
+                </tr>
+
+                <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Outputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/it2v/9b4cdab649a2fcc7b2411f669414e540_pred.png"></td>
+                </tr>
+
+                 <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Input Text:</td>
+                    <td width="240" valign="middle" halign="left" align="left"
+                        style="font-size:13px; padding-bottom:20px">&nbsp;&nbsp;<i>A cute white cartoon teddy bear holding a heart in his hands</i></td>
+                 </tr>
+
+                <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Ref Img:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/it2v/b3726e12426a3b9100b42e33c294375f_ref.png"></td>
+                </tr>
+
+                <tr>
+                    <td width="80" valign="middle" halign="middle" align="middle"
+                        style="font-size:13px; padding-bottom:20px">Outputs:</td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
+                            height="160" src="assets/it2v/b3726e12426a3b9100b42e33c294375f_pred.png"></td>
+                </tr>
+
+            </table>
+            <center>
+            <h3 class="title is-4">Image&Text to GIF</h3>
+            </center>
 
 
-<hr />
-<td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-    height="160" src="assets/WeChat_vis1.jpg"></td>
-<center>
-<h5 class="title is-6">Figure 5: Case 1 of qualitative comparison on the WeChat test set, focusing on a technical-support dialogue scenario.</h5>
-</center>
-
-<hr />
-<td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="1280"
-    height="160" src="assets/WeChat_vis2.jpg"></td>
-<center>
-<h5 class="title is-6">Figure 6: Case 2 of qualitative comparison on the WeChat test set, illustrating fragment retrieval in a personal-life dialogue scenario.</h5>
-</center>
-</section> -->
-  <!-- Table Image -->
-  <!-- <div style="text-align: center; margin-bottom: 2rem;">
-    <a href="assets/results.png" target="_blank">
-      <img src="assets/results.png" style="max-height: 500px; width: auto; cursor: zoom-in;" alt="Results Table">
-    </a>
-    <p class="subtitle is-6">Table 1: Comparison with popular VLMs on the MLDR validation set and WeChat test set. ``$\dagger$'' indicates zero-shot inference without MLDR fine-tuning. ``$\ast$'' indicates models limited by context length, evaluated via sliding-window inference.</p>
-  </div> -->
-
-  <!-- MLDR Qualitative Results -->
-  <!-- <div style="text-align: center; margin-bottom: 2rem;">
-    <a href="assets/MLDR_vis.jpg" target="_blank">
-      <img src="assets/MLDR_vis.jpg" style="max-height: 550px; width: auto; cursor: zoom-in;" alt="MLDR Qualitative Results">
-    </a>
-    <p class="subtitle is-6">Figure 4: Qualitative comparison on the MLDR validation set. Given a user query, we visualize one representative case of retrieved fragments from various models. Pre-trained models often retrieve semantically relevant but incomplete or disjointed fragments. MLDR fine-tuned models improve alignment but may still miss contextual boundaries. Our F$^2$RVLM-7B achieves the most coherent and complete retrieval, accurately aligning both utterances and images with the intended semantics.</p>
-  </div> -->
-
-  <!-- WeChat Case 1 -->
-  <!-- <div style="text-align: center; margin-bottom: 2rem;">
-    <a href="assets/WeChat_vis1.jpg" target="_blank">
-      <img src="assets/WeChat_vis1.jpg" style="max-height: 550px; width: auto; cursor: zoom-in;" alt="WeChat Case 1">
-    </a>
-    <p class="subtitle is-6">Figure 5: Case 1 of qualitative comparison on the WeChat test set, focusing on a technical-support dialogue scenario.</p>
-  </div> -->
-
-  <!-- WeChat Case 2 -->
-  <!-- <div style="text-align: center;">
-    <a href="assets/WeChat_vis2.jpg" target="_blank">
-      <img src="assets/WeChat_vis2.jpg" style="max-height: 550px; width: auto; cursor: zoom-in;" alt="WeChat Case 2">
-    </a>
-    <p class="subtitle is-6">Figure 6: Case 2 of qualitative comparison on the WeChat test set, illustrating fragment retrieval in a personal-life dialogue scenario.</p>
-  </div> -->
+        </center>
+    </section>
 
 
+    <section class="section" id="results">
+        <hr />
+        <h2 class="title is-3">Compare to Other Methods</h2>
+        </center>
+        <table align="center">
+                <div class="center-text">
+                </div>
+                <br>
+                <tr>
+                    <td width="145" valign="middle" halign="middle" align="center"
+                        style="font-size:14px"><b>Ref Image</b></td>
+                    <td width="145" valign="middle" halign="middle" align="center"
+                        style="font-size:14px"><b>Ref Text</b></td>
+                    <td width="145" valign="middle" halign="middle" align="center"
+                        style="font-size:14px"><b>Customize-A-Video [1]</b></td>
+                    <td width="145" valign="middle" halign="middle" align="center"
+                        style="font-size:14px"><b>I2V-Adapter [2]</b></td>
+                    <td width="145" valign="middle" halign="middle" align="center"
+                        style="font-size:14px"><b>SimDA [3]</b></td>
+                    <td width="145" valign="middle" halign="middle" align="center"
+                        style="font-size:14px"><b>Ours</b></td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case1_ref.gif"></td>
+                    <td width="145" valign="middle" halign="middle" align="center"
+                        style="font-size:14px">A cute little girl in a pink bunny hat showing surprise and joy</td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case1_cav.gif"></td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case1_i2vadapter.gif"></td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case1_simda.gif"></td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case1_our.gif"></td>
+                </tr>
+
+                <tr>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case2_ref.gif"></td>
+                    <td width="145" valign="middle" halign="middle" align="center"
+                        style="font-size:14px">A small cartoon character pointing at a heart</td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case2_cav.gif"></td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case2_i2vadapter.gif"></td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case2_simda.gif"></td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case2_our.gif"></td>
+                </tr>
+
+                <tr>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case3_ref.gif"></td>
+                    <td width="145" valign="middle" halign="middle" align="center"
+                        style="font-size:14px">A yellow smiley face with two thumbs up, symbolizing approval, satisfaction or enthusiasm</td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case3_cav.gif"></td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case3_i2vadapter.gif"></td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case3_simda.gif"></td>
+                    <td align="center" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="145"
+                            height="145" src="assets/comp/case3_our.gif"></td>
+                </tr>
+
+            </table>
+
+    </section>
+
+    <section class="section" id="results">
+        <hr />
+        <h2 class="title is-3">More Results</h2>
+            <table align="center">
+                <div class="large-4 columns">
+                </div>
+                <br>
+
+                <tr>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/104ea41e839d7a174382e757cbf4d889_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/a303ff495758354f4fc9a4b91ab8723c_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/a43414dd76ae3577bb4ba6ccd1ec7e4c_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256"
+                            src="assets/interpolation/b279f3612337f6116d365c36ee48925e_pred.gif">
+                    </td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/b3726e12426a3b9100b42e33c294375f_pred.gif"></td>
+                </tr>
+
+                <tr>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/bb1a82dc9e5791bd5a299a6e306b5051_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/632bec5e08f177cd9f37a353697b6626_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/071ada92e48b3b6beb89e298074aed5b_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256"
+                            src="assets/interpolation/44d41d2863c3fd90ffb47f16d4f0931c_pred.gif">
+                    </td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/4d0f81ff7a7fa9f312cb96b01007c7a4_pred.gif"></td>
+                </tr>
+
+                <tr>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/4bf84d5ad334f785f198a76766a25025_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/827589bfd6d21f29d71013c657023207_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/5fdc05f233517d9aad9b15d8006cc833_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/89757532a98a8a8aed76640a38045478_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/interpolation/cc5370973067744a6fb7d83e73725104_pred.gif"></td>
+                </tr>
+
+            </table>
+            <center>
+            <h3 class="title is-4">Interpolation</h3>
+            </center>
+
+            </table>
+            <table align="center">
+                <div class="large-4 columns">
+                </div>
+                <br>
+
+                <tr>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/2af4c8b73e303e3ecc83c1cef90e9243_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/2f940921641b4688c89b6cb06ec58cfa_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/5cac5ac1834f4e8f14230b366cc2c0fe_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256"
+                            src="assets/frame_prediction/191ebc1fe1716b012caf75913c0bb0e9_pred.gif">
+                    </td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256"
+                            src="assets/frame_prediction/5f3c66570b1b5101f3053e8157d20709_pred.gif">
+                    </td>
+                </tr>
 
 
-<section class="section" id="BibTeX">
-<div class="container is-max-desktop content">
-<h2 class="title">BibTeX</h2>
-<p> If you use our work in your research, please cite: </p>
-<pre><code>
-@misc{anonymous2025F2RVLM,
-title={F²RVLM: Boosting Fine-grained Fragment Retrieval for Multi-Modal Long-form Dialogue with Vision Language Model},
-author={Anonymous},
-archivePrefix={arXiv},
-primaryClass={cs.CV}}
-</code></pre>
-</div>
-</section>
+                <tr>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/26109fcae83c64b6d77329e908f10bb4_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/4621f037f8ff6409657d45e792172f42_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/480419f7acc9acc2f46a88934490eed6_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/2b160f995509b749f266dbddad18e115_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/8e7c4ba5bfaf3b84bb0cb946da022f87_pred.gif"></td>
+                </tr>
+
+                <tr>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/c1fb36426ca655f1766669c1879b588c_pred.gif"></td>
+                     <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/cc5370973067744a6fb7d83e73725104_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256"
+                            src="assets/frame_prediction/e3c7610baccf21c2ff1337d2d7ec0715_pred.gif">
+                    </td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/f1a7af33eb110f9799a21f46a1014a22_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/frame_prediction/0840d548f8091e4f3e73ad391b89fcd6_pred.gif"></td>
+                </tr>
 
 
-<footer class="footer">
-  <div class="container">
-    <h2 class="title is-4 has-text-centered">References</h2> <!-- ✅ 添加标题 -->
-    <div class="content has-text-centered">
-      <a class="icon-link" href="#">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-    </div>
-<div class="columns is-centered">
-<div class="column is-8">
-<div class="content">
+            </table>
+            <center>
+            <h3 class="title is-4">Prediction</h3>
+            </center>
 
-<p>[1] Zhao Y, Huang J, Hu J, et al. Swift: a scalable lightweight infrastructure for fine-tuning[C]//Proceedings of the AAAI Conference on Artificial Intelligence. 2025, 39(28): 29733-29735.</p>
+           </table>
+            <table align="center">
+                <div class="large-4 columns">
+                </div>
+                <br>
 
-<p>[2] Hurst A, Lerer A, Goucher A P, et al. Gpt-4o system card[J]. arXiv preprint arXiv:2410.21276, 2024.</p>
+                <tr>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/cb572e531ac78bddbeccb94c33b8fc83_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/9b4cdab649a2fcc7b2411f669414e540_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/329865e5a656a70850ea8a43a78e0467_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/0ee0400d8437415f3dbc35ee40cb9678_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="240"
+                            height="256" src="assets/it2v/7704813bc3914f9dbb6f0c5021e8ca8d_pred.gif"></td>
+                </tr>
 
-<p>[3] Comanici G, Bieber E, Schaekermann M, et al. Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities[J]. arXiv preprint arXiv:2507.06261, 2025.</p>
-<p>[4] Guo D, Wu F, Zhu F, et al. Seed1. 5-vl technical report[J]. arXiv preprint arXiv:2505.07062, 2025</p>
-<p>[5] Bai S, Chen K, Liu X, et al. Qwen2. 5-vl technical report[J]. arXiv preprint arXiv:2502.13923, 2025.</p>
-<p>[6] Wu Z, Chen X, Pan Z, et al. Deepseek-vl2: Mixture-of-experts vision-language models for advanced multimodal understanding[J]. arXiv preprint arXiv:2412.10302, 2024.</p>
-<hr>
-</div>
-</div>
-</div>
-</div>
-</footer>
+                <tr>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/27a47d68a1a98f18c63982e2040029a5_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/b26a618780c5b5442be0cd0f75e5898b_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/3bf1da9f274cace37564aeb88a43171d_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/337e01b404fe89993de375286e4e4b07_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/b63432fbc1ea49da1e31175b3724d210_pred.gif"></td>
+                </tr>
+
+                <tr>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/c9d58bb9264f1efd0cf17c07dba1da19_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/5cac5ac1834f4e8f14230b366cc2c0fe_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/0b0f4f4033e3e85f95b13d2d1af55ac5_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/71eb060ffacfd25d589e09774e76a2de_pred.gif"></td>
+                    <td align="left" style="padding-left: 0px; padding-bottom: 0px;"><img class="center" width="256"
+                            height="256" src="assets/it2v/595e150c2b0b83d806b19f12e03ba582_pred.gif"></td>
+                </tr>
+
+
+            </table>
+            <center>
+            <h3 class="title is-4">Generation</h3>
+            </center>
+        </center>
+    </section>
+
+
+
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title">BibTeX</h2>
+          <p> If you use our work in your research, please cite: </p>
+          <pre><code>
+            @misc{anonymous2025RDTF,
+            title={Resource-Efficient Dual-Mask Training Framework for Animated Sticker Generation},
+            author={Anonymous},
+            archivePrefix={arXiv},
+            primaryClass={cs.CV}}
+      </code></pre>
+        </div>
+      </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <a class="icon-link" href="#">
+                    <i class="fas fa-file-pdf"></i>
+                </a>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>[1] Ren, Y., Zhou, Y., Yang, J., Shi, J., Liu, D., Liu, F., ... & Shrivastava, A. (2024). Customize-A-Video: One-Shot Motion Customization of Text-to-Video Diffusion Models. CoRR.</p>
+
+                        <p>[2] Guo, X., Zheng, M., Hou, L., Gao, Y., Deng, Y., Wan, P., ... & Ma, C. (2024, July). I2V-Adapter: A General Image-to-Video Adapter for Diffusion Models. In ACM SIGGRAPH 2024 Conference Papers (pp. 1-12).</p>
+
+                        <p>[3] Xing, Z., Dai, Q., Hu, H., Wu, Z., & Jiang, Y. G. (2024). Simda: Simple diffusion adapter for efficient video generation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 7827-7839).</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 </body>
