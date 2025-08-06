@@ -108,19 +108,19 @@
 
   <!-- Task Definition Figure -->
   <div style="text-align: center; margin-bottom: 2rem;">
-    <img src="assets/Retrieval.jpg" style="max-width: 100%; height: auto;" alt="FFR Task Illustration">
+    <img src="assets/Retrieval.jpg" style="max-height: 500px; width: auto;" alt="FFR Task Illustration">
     <p class="subtitle is-6">Figure 1: Comparison between traditional Dialogue Retrieval and our Fine-grained Fragment Retrieval (FFR) task.</p>
   </div>
 
   <!-- MLDR Construction Pipeline -->
   <div style="text-align: center; margin-bottom: 2rem;">
-    <img src="assets/MLDR.jpg" style="max-width: 100%; height: auto;" alt="MLDR Construction Pipeline">
+    <img src="assets/MLDR.jpg" style="max-height: 500px; width: auto;" alt="MLDR Construction Pipeline">
     <p class="subtitle is-6">Figure 2: Overview of the MLDR construction pipeline, which integrates multimodal short dialogue processing, Qwen3-driven long-form dialogue generation, multi-granularity annotation, and retrieval-oriented task design.</p>
   </div>
 
   <!-- F2RVLM Framework -->
   <div style="text-align: center;">
-    <img src="assets/Framework.jpg" style="max-width: 100%; height: auto;" alt="F2RVLM Framework">
+    <img src="assets/Framework.jpg" style="max-height: 500px; width: auto;" alt="F2RVLM Framework">
     <p class="subtitle is-6">Figure 3: Overview of the F$^2$RVLM framework for multimodal long-form dialogue fragment retrieval. It consists of supervised fine-tuning for fragment-level knowledge injection, personalized curriculum sampling based on retrieval difficulty, and GRPO-based reinforcement learning to jointly enhance retrieval accuracy and fragment semantic coherence.</p>
   </div>
 </section>
@@ -129,31 +129,30 @@
   <hr />
   <h2 class="title is-3">Results</h2>
 
-  <!-- Task Definition Figure -->
+  <!-- Table Image -->
   <div style="text-align: center; margin-bottom: 2rem;">
-    <img src="assets/results.png" style="max-width: 100%; height: auto;" alt="FFR Task Illustration">
+    <img src="assets/results.png" style="max-height: 450px; width: auto;" alt="Results Table">
     <p class="subtitle is-6">Table 1: Comparison with popular VLMs on the MLDR validation set and WeChat test set. ``$\dagger$'' indicates zero-shot inference without MLDR fine-tuning. ``$\ast$'' indicates models limited by context length, evaluated via sliding-window inference.</p>
   </div>
 
-  <!-- MLDR Construction Pipeline -->
+  <!-- MLDR Qualitative Results -->
   <div style="text-align: center; margin-bottom: 2rem;">
-    <img src="assets/MLDR_vis.jpg" style="max-width: 100%; height: auto;" alt="MLDR Construction Pipeline">
+    <img src="assets/MLDR_vis.jpg" style="max-height: 500px; width: auto;" alt="MLDR Qualitative Results">
     <p class="subtitle is-6">Figure 4: Qualitative comparison on the MLDR validation set. Given a user query, we visualize one representative case of retrieved fragments from various models. Pre-trained models often retrieve semantically relevant but incomplete or disjointed fragments. MLDR fine-tuned models improve alignment but may still miss contextual boundaries. Our F$^2$RVLM-7B achieves the most coherent and complete retrieval, accurately aligning both utterances and images with the intended semantics.</p>
   </div>
 
-  <!-- F2RVLM Framework -->
-  <div style="text-align: center;">
-    <img src="assets/WeChat_vis1.jpg" style="max-width: 100%; height: auto;" alt="F2RVLM Framework">
-    <p class="subtitle is-6"> Figure 5: Case 1 of qualitative comparison on the WeChat test set, focusing on a technical-support dialogue scenario.</p>
+  <!-- WeChat Case 1 -->
+  <div style="text-align: center; margin-bottom: 2rem;">
+    <img src="assets/WeChat_vis1.jpg" style="max-height: 500px; width: auto;" alt="WeChat Case 1">
+    <p class="subtitle is-6">Figure 5: Case 1 of qualitative comparison on the WeChat test set, focusing on a technical-support dialogue scenario.</p>
   </div>
 
-    <div style="text-align: center;">
-    <img src="assets/WeChat_vis2.jpg" style="max-width: 100%; height: auto;" alt="F2RVLM Framework">
+  <!-- WeChat Case 2 -->
+  <div style="text-align: center;">
+    <img src="assets/WeChat_vis2.jpg" style="max-height: 500px; width: auto;" alt="WeChat Case 2">
     <p class="subtitle is-6">Figure 6: Case 2 of qualitative comparison on the WeChat test set, illustrating fragment retrieval in a personal-life dialogue scenario.</p>
   </div>
 </section>
-
-
 
 
 
@@ -182,7 +181,7 @@ primaryClass={cs.CV}}
 <div class="columns is-centered">
 <div class="column is-8">
 <div class="content">
-    
+
 <p>[1] Ren, Y., Zhou, Y., Yang, J., Shi, J., Liu, D., Liu, F., ... & Shrivastava, A. (2024). Customize-A-Video: One-Shot Motion Customization of Text-to-Video Diffusion Models. CoRR.</p>
 
 <p>[2] Guo, X., Zheng, M., Hou, L., Gao, Y., Deng, Y., Wan, P., ... & Ma, C. (2024, July). I2V-Adapter: A General Image-to-Video Adapter for Diffusion Models. In ACM SIGGRAPH 2024 Conference Papers (pp. 1-12).</p>
